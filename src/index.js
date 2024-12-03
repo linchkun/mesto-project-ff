@@ -1,7 +1,7 @@
 import "./pages/index.css";
 import { initialCards } from "./scripts/cards.js";
 import { openPopup, closePopup } from "./components/modal.js";
-import { createCard, deleteCallback, isLiked } from "./components/card.js";
+import { createCard, deleteCallback, toggleLike } from "./components/card.js";
 
 // переменные
 const placesList = document.querySelector(".places__list");
@@ -28,7 +28,7 @@ initialCards.forEach(function (element) {
     element.link,
     deleteCallback,
     showImg,
-    isLiked
+    toggleLike
   );
   placesList.append(cardElement);
 });
@@ -67,7 +67,7 @@ function handleCardSubmit(event) {
     cardLink,
     deleteCallback,
     showImg,
-    isLiked
+    toggleLike
   );
   placesList.prepend(cardElement);
   closePopup(addCard);
